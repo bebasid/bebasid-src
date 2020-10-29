@@ -1,0 +1,15 @@
+c:\users\user\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.csproj.GenerateResource.cache
+c:\users\user\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\bebasit.exe.config
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\bebasit.exe
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\bebasit.pdb
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.Properties.Resources.resources
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.exe
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.pdb
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\bebasit.exe.manifest
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\bebasit.application
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.TrustInfo.xml
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.exe.manifest
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.application
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\bebasit.bebasitApp.resources
