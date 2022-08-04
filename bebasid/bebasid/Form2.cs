@@ -99,6 +99,8 @@ namespace bebasid
         private void startDownload(string link)
         {
             disableButton();
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             installationStatus.Text = "Mengecek koneksi dengan internet";
             Thread thread = new Thread(() => {
                 if (checkConnection())
@@ -127,7 +129,11 @@ namespace bebasid
                     WebClient client = new WebClient();
                     client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
                     client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
-                    client.DownloadFile(new System.Uri(link), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
+                    client.DownloadFileAsync(new System.Uri(link), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
+                    while (client.IsBusy)
+                    {
+                        installationStatus.Text = "Mengambil instalasi bebasid";
+                    }
                     Thread.Sleep(1000);
                     installationStatus.Text = "Berhasil memasang hosts bebasid";
                     Thread.Sleep(500);

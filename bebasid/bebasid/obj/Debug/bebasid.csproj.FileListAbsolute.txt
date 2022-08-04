@@ -10,3 +10,15 @@ C:\Users\USER\source\repos\bebasid\bebasid\obj\Debug\bebasid.pdb
 C:\Users\USER\source\repos\bebasid\bebasid\obj\Debug\bebasid.Form2.resources
 C:\Users\USER\source\repos\bebasid\bebasid\obj\Debug\bebasid.About.resources
 C:\Users\USER\source\repos\bebasid\bebasid\obj\Debug\bebasid.Form4.resources
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.csproj.AssemblyReference.cache
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.exe
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.pdb
+E:\VS Code\bebasid\bebasid\bin\Debug\bebasid.exe
+E:\VS Code\bebasid\bebasid\bin\Debug\bebasid.pdb
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.Form1.resources
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.Form2.resources
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.About.resources
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.Properties.Resources.resources
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.csproj.GenerateResource.cache
+E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.csproj.CoreCompileInputs.cache
+E:\VS Code\bebasid\bebasid\bin\Debug\bebasid.exe.config

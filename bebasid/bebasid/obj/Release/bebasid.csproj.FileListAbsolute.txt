@@ -1,0 +1,12 @@
+C:\Users\USER\source\repos\bebasid\bebasid\bin\Release\bebasid.exe
+C:\Users\USER\source\repos\bebasid\bebasid\bin\Release\bebasid.pdb
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.Form1.resources
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.Form2.resources
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.About.resources
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.Form4.resources
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.Properties.Resources.resources
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.exe
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.pdb
+C:\Users\USER\source\repos\bebasid\bebasid\obj\Release\bebasid.csprojAssemblyReference.cache
