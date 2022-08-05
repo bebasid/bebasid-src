@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bebasid",
+    "\\bebasid\\bebasid"
   ],
-  "SelectedNode": "\\bebasid.sln",
+  "SelectedNode": "\\bebasid\\bebasid\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

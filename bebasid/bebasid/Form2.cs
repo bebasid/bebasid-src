@@ -214,7 +214,7 @@ namespace bebasid
                             {
                                 try
                                 {
-                                    startDownload("https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts");
+                                    startDownload("https://bebasid.com/hosts");
                                 }
                                 finally
                                 {

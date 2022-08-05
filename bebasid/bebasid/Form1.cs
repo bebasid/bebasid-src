@@ -99,28 +99,7 @@ namespace bebasid
                         labelVersi.Text = "v" + versihosts.Substring(9);
 
                         // Fungsi lihat versi hosts remote
-                        InitializeComponent();
-                        WebClient client = new WebClient();
-                        var versihostsremote = client.DownloadString("https://bebasid.com/hosts").Skip(4).Take(1).First().ToString();
-                        labelVersiRemote.Text = "v" + versihostsremote.Substring(9);
 
-                        if (String.Compare(versihostsremote.Substring(9), versihosts.Substring(9)) == 0)
-                        {
-                            DialogResult dialogResult = MessageBox.Show("Pembaruan tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                btnUpdateHosts.PerformClick();
-                            }
-                            else if (dialogResult == DialogResult.No)
-                            {
-                                Close();
-                            }
-                            btnUpdateHosts.Enabled = true;
-                        }
-                        else
-                        {
-                            btnUpdateHosts.Enabled = false;
-                        }
 
                         // Tambahan
                         labelTypeHostsValue.Text = "NSFW";
