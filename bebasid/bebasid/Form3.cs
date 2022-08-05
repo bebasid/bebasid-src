@@ -43,7 +43,7 @@ namespace bebasid
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://bebasid.github.io");
+            System.Diagnostics.Process.Start("https://bebasid.com");
         }
 
         private void button2_Click(object sender, EventArgs e)

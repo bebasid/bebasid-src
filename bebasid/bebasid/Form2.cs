@@ -79,7 +79,7 @@ namespace bebasid
         }
         public void loading(int start, int finish)
         {
-            for( int i = start; i < finish; i++)
+            for (int i = start; i < finish; i++)
             {
                 progressBar1.Value = i;
                 Thread.Sleep(100);
@@ -99,7 +99,7 @@ namespace bebasid
         private void startDownload(string link)
         {
             disableButton();
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             installationStatus.Text = "Mengecek koneksi dengan internet";
             Thread thread = new Thread(() => {
@@ -174,7 +174,7 @@ namespace bebasid
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate {
-                
+
             });
         }
 
@@ -184,9 +184,9 @@ namespace bebasid
             {
                 if (!isBebasidInstalled())
                 {
-                    if(comboBox1.SelectedItem.ToString().Trim() == "SFW")
+                    if (comboBox1.SelectedItem.ToString().Trim() == "SFW")
                     {
-                        var bebasitKonfirmasi = MessageBox.Show("Dengan menekan tombol 'Yes', file hosts komputer anda akan diubah dengan hosts bebasid (SFW) dan secara langsung maupun tidak langsung, anda menyetujui aturan pemakaian yang dikeluarkan oleh tim bebasid.\n\nApakah anda yakin ingin melanjutkan pemasangan bebasid?","Konfirmasi",MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        var bebasitKonfirmasi = MessageBox.Show("Dengan menekan tombol 'Yes', file hosts komputer anda akan diubah dengan hosts bebasid (SFW) dan secara langsung maupun tidak langsung, anda menyetujui aturan pemakaian yang dikeluarkan oleh tim bebasid.\n\nApakah anda yakin ingin melanjutkan pemasangan bebasid?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (bebasitKonfirmasi == DialogResult.Yes)
                         {
                             Thread suk = new Thread(() =>
@@ -241,6 +241,11 @@ namespace bebasid
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

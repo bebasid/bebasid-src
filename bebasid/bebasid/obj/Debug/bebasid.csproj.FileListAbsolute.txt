@@ -22,3 +22,16 @@ E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.Properties.Resources.resources
 E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.csproj.GenerateResource.cache
 E:\VS Code\bebasid\bebasid\obj\Debug\bebasid.csproj.CoreCompileInputs.cache
 E:\VS Code\bebasid\bebasid\bin\Debug\bebasid.exe.config
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\bin\Debug\bebasid.exe.config
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\bin\Debug\bebasid.exe
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\bin\Debug\bebasid.pdb
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj.AssemblyReference.cache
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj.SuggestedBindingRedirects.cache
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.Form1.resources
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.Form2.resources
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.About.resources
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.Properties.Resources.resources
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj.GenerateResource.cache
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj.CoreCompileInputs.cache
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.exe
+C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.pdb

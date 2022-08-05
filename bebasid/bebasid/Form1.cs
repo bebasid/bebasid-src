@@ -10,7 +10,7 @@ using System.Security.Principal;
 using System.Net;
 using System.Threading;
 using System.Diagnostics;
-
+using System.Linq;
 
 namespace bebasid
 {
@@ -88,11 +88,41 @@ namespace bebasid
                 {
                     labelTypeHostsValue.Text = "SFW";
                     buttonChangeTypeHosts.Text = "NSFW Mode";
+                    labelVersi.Text = "sfwver v1.0";
                 }
                 else
                 {
                     if (isNSFW())
                     {
+                        // Fungsi lihat versi hosts local
+                        var versihosts = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts").Skip(4).Take(1).First();
+                        labelVersi.Text = "v" + versihosts.Substring(9);
+
+                        // Fungsi lihat versi hosts remote
+                        InitializeComponent();
+                        WebClient client = new WebClient();
+                        var versihostsremote = client.DownloadString("https://bebasid.com/hosts").Skip(4).Take(1).First().ToString();
+                        labelVersiRemote.Text = "v" + versihostsremote.Substring(9);
+
+                        if (String.Compare(versihostsremote.Substring(9), versihosts.Substring(9)) == 0)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Pembaruan tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                btnUpdateHosts.PerformClick();
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                                Close();
+                            }
+                            btnUpdateHosts.Enabled = true;
+                        }
+                        else
+                        {
+                            btnUpdateHosts.Enabled = false;
+                        }
+
+                        // Tambahan
                         labelTypeHostsValue.Text = "NSFW";
                         buttonChangeTypeHosts.Text = "SFW Mode";
                     }
@@ -100,7 +130,7 @@ namespace bebasid
                     {
                         labelTypeHostsValue.Text = "-";
                     }
-                        
+
                 }
                 btnInstall.Enabled = false;
                 btnUpdateHosts.Enabled = true;
@@ -110,6 +140,7 @@ namespace bebasid
             else
             {
                 labelTypeHostsValue.Text = "-";
+                labelVersi.Text = "-";
                 statusHostsValue.Text = "Tidak Terpasang";
                 btnInstall.Enabled = true;
                 btnUpdateHosts.Enabled = false;
@@ -155,7 +186,7 @@ namespace bebasid
             {
                 if (ngeFlush.Start())
                 {
-               
+
                     return;
                 }
                 else
@@ -199,7 +230,7 @@ namespace bebasid
                     Thread.Sleep(500);
                     WebClient client = new WebClient();
                     client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
-                    client.DownloadFile(new System.Uri(link), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
+                    client.DownloadFile(new Uri(link), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
                     Thread.Sleep(1000);
                     installationStatus.Text = "Berhasil memasang hosts bebasid";
                     Thread.Sleep(500);
@@ -208,7 +239,7 @@ namespace bebasid
                     if (ngeFlush())
                     {
                         installationStatus.Text = "Berhasil melakukan flush DNS";
-                        Thread.Sleep(500); 
+                        Thread.Sleep(500);
                         installationStatus.Text = "Finalisasi";
                         setDefaultValues();
                         loading(80, 100);
@@ -257,7 +288,7 @@ namespace bebasid
                     {
                         try
                         {
-                            startDownload("https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts");
+                            startDownload("https://bebasid.com/hosts");
                         }
                         finally
                         {
@@ -333,7 +364,7 @@ namespace bebasid
         {
             if (isSFW())
             {
-                var bebasitKonfirmasi = MessageBox.Show("Apakah anda yakin ingin mengupdate hosts bebasid?","Konfirmasi",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var bebasitKonfirmasi = MessageBox.Show("Apakah anda yakin ingin mengupdate hosts bebasid?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (bebasitKonfirmasi == DialogResult.Yes)
                 {
 
@@ -360,7 +391,7 @@ namespace bebasid
                     {
                         try
                         {
-                            startDownload("https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts");
+                            startDownload("https://bebasid.com/hosts");
                         }
                         finally
                         {
@@ -370,6 +401,10 @@ namespace bebasid
                     suk.Start();
                 }
             }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
         }
     }
 }
