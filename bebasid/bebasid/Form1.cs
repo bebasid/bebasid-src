@@ -100,18 +100,22 @@ namespace bebasid
 
                         // Fungsi lihat versi hosts remote
                         WebClient siaaa = new WebClient();
-                        siaaa.DownloadFileAsync(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/Temp/hostsupdate");
-                        loading(1, 30);
+                        siaaa.DownloadFile(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/Temp/hostsupdate");
                         var versihostsremote = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/Temp/hostsupdate").Skip(4).Take(1).First();
                         labelVersiRemote.Text = versihosts.Substring(9);
-/*
-                        if (labelVersi.Text != labelVersiRemote.Text)
+
+                        string stringversi = versihosts.Substring(9);
+                        string stringversiremote = versihostsremote.Substring(9);
+                        
+                        if (stringversi != stringversiremote)
                         {
                             DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.Yes)
                             {
                                 btnUpdateHosts.Enabled = true;
-                                btnUpdateHosts.PerformClick();
+                                WebClient client = new WebClient();
+                                client.DownloadFile(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
+                                MessageBox.Show("Berhasil mengupdate hosts bebasid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else if (dialogResult == DialogResult.No)
                             {
@@ -122,23 +126,24 @@ namespace bebasid
                             btnUpdateHosts.Enabled = false;
                         }
 
-                        if (String.Compare(labelVersi.Text, labelVersiRemote.Text) == 0)
-                        {
-                            DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                btnUpdateHosts.PerformClick();
-                            }
-                            else if (dialogResult == DialogResult.No)
-                            {
-                            }
-                            btnUpdateHosts.Enabled = true;
-                        }
-                        else
-                        {
-                            btnUpdateHosts.Enabled = false;
-                        }
-*/
+                        /*
+                                                if (String.Compare(labelVersi.Text, labelVersiRemote.Text) == 0)
+                                                {
+                                                    DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                                    if (dialogResult == DialogResult.Yes)
+                                                    {
+                                                        btnUpdateHosts.PerformClick();
+                                                    }
+                                                    else if (dialogResult == DialogResult.No)
+                                                    {
+                                                    }
+                                                    btnUpdateHosts.Enabled = true;
+                                                }
+                                                else
+                                                {
+                                                    btnUpdateHosts.Enabled = false;
+                                                }
+                        */
 
                         // Tambahan
                         labelTypeHostsValue.Text = "NSFW";
@@ -151,7 +156,6 @@ namespace bebasid
 
                 }
                 btnInstall.Enabled = false;
-                btnUpdateHosts.Enabled = true;
                 buttonChangeTypeHosts.Enabled = true;
                 btnUninstallHosts.Enabled = true;
             }
@@ -161,7 +165,6 @@ namespace bebasid
                 labelVersi.Text = "-";
                 statusHostsValue.Text = "Tidak Terpasang";
                 btnInstall.Enabled = true;
-                btnUpdateHosts.Enabled = false;
                 buttonChangeTypeHosts.Enabled = false;
                 btnUninstallHosts.Enabled = false;
             }
