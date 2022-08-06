@@ -88,7 +88,7 @@ namespace bebasid
                 {
                     labelTypeHostsValue.Text = "SFW";
                     buttonChangeTypeHosts.Text = "NSFW Mode";
-                    labelVersi.Text = "sfwver v1.0";
+                    labelVersi.Text = "sfwver 1.0";
                 }
                 else
                 {
@@ -96,10 +96,49 @@ namespace bebasid
                     {
                         // Fungsi lihat versi hosts local
                         var versihosts = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts").Skip(4).Take(1).First();
-                        labelVersi.Text = "v" + versihosts.Substring(9);
+                        labelVersi.Text = versihosts.Substring(9);
 
                         // Fungsi lihat versi hosts remote
+                        WebClient siaaa = new WebClient();
+                        siaaa.DownloadFileAsync(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/Temp/hostsupdate");
+                        loading(1, 30);
+                        var versihostsremote = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/Temp/hostsupdate").Skip(4).Take(1).First();
+                        labelVersiRemote.Text = versihosts.Substring(9);
+/*
+                        if (labelVersi.Text != labelVersiRemote.Text)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                btnUpdateHosts.Enabled = true;
+                                btnUpdateHosts.PerformClick();
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                            }
+                        }
+                        else
+                        {
+                            btnUpdateHosts.Enabled = false;
+                        }
 
+                        if (String.Compare(labelVersi.Text, labelVersiRemote.Text) == 0)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                btnUpdateHosts.PerformClick();
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                            }
+                            btnUpdateHosts.Enabled = true;
+                        }
+                        else
+                        {
+                            btnUpdateHosts.Enabled = false;
+                        }
+*/
 
                         // Tambahan
                         labelTypeHostsValue.Text = "NSFW";

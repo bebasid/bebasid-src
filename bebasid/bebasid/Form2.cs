@@ -120,7 +120,7 @@ namespace bebasid
                     {
                         installationStatus.Text = "Mengambil backup hosts";
                         WebClient siaa = new WebClient();
-                        siaa.DownloadFileAsync(new System.Uri("https://raw.githubusercontent.com/bebasid/bebasid/master/dev/resources/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts-bebasid.bak");
+                        siaa.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/bebasid/bebasid/master/dev/resources/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts-bebasid.bak");
                         loading(15, 30);
                         installationStatus.Text = "Berhasil mengambil backup hosts";
                         Thread.Sleep(500);
