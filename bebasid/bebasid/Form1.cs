@@ -112,10 +112,10 @@ namespace bebasid
                             DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.Yes)
                             {
-                                btnUpdateHosts.Enabled = true;
                                 WebClient client = new WebClient();
                                 client.DownloadFile(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
                                 MessageBox.Show("Berhasil mengupdate hosts bebasid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                btnUpdateHosts.Enabled = false;
                             }
                             else if (dialogResult == DialogResult.No)
                             {
