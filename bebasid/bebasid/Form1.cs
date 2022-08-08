@@ -116,6 +116,9 @@ namespace bebasid
                                 client.DownloadFile(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
                                 MessageBox.Show("Berhasil mengupdate hosts bebasid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 btnUpdateHosts.Enabled = false;
+                                
+                                var versihostsupdate = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts").Skip(4).Take(1).First();
+                                labelVersi.Text = versihosts.Substring(9);
                             }
                             else if (dialogResult == DialogResult.No)
                             {
