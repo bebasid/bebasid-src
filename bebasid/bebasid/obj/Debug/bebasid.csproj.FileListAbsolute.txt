@@ -35,3 +35,5 @@ C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj
 C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj.CoreCompileInputs.cache
 C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.exe
 C:\Users\gvoze\Source\Repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.pdb
+C:\Users\gvoze\source\repos\bebasid-src\bebasid\bebasid\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\gvoze\source\repos\bebasid-src\bebasid\bebasid\obj\Debug\bebasid.csproj.ResolveComReference.cache

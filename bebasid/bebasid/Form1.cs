@@ -11,6 +11,7 @@ using System.Net;
 using System.Threading;
 using System.Diagnostics;
 using System.Linq;
+using static System.Windows.Forms.LinkLabel;
 
 namespace bebasid
 {
@@ -181,7 +182,16 @@ namespace bebasid
                 MessageBox.Show("Aplikasi ini membutuhkan hak admin, silakan buka dengan opsi 'Run as Administrator'", "bebasid");
                 Environment.Exit(0);
             }
-            setDefaultValues();
+
+            if (checkConnection())
+            {
+                setDefaultValues();
+            }
+            else
+            {
+                MessageBox.Show("Komputer tidak terhubung dengan internet", "bebasid");
+                Environment.Exit(0);
+            }
         }
 
         public void disableButton()
