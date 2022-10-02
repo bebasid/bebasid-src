@@ -60,9 +60,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(42, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "v1.1 (2022.9 build)";
+            this.label2.Text = "v1.1 (2022.10 build)";
             // 
             // label5
             // 

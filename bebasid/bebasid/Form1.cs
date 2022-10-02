@@ -120,7 +120,7 @@ namespace bebasid
                                 btnUpdateHosts.Enabled = false;
                                 Thread.Sleep(1000);
                                 var versihostsupdate = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts").Skip(4).Take(1).First();
-                                labelVersi.Text = versihosts.Substring(9);
+                                labelVersi.Text = versihostsupdate.Substring(9);
                             }
                             else if (dialogResult == DialogResult.No)
                             {
