@@ -115,9 +115,10 @@ namespace bebasid
                             {
                                 WebClient client = new WebClient();
                                 client.DownloadFile(new Uri("https://bebasid.com/hosts"), Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts");
+                                Thread.Sleep(1000);
                                 MessageBox.Show("Berhasil mengupdate hosts bebasid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 btnUpdateHosts.Enabled = false;
-                                
+                                Thread.Sleep(1000);
                                 var versihostsupdate = File.ReadLines(Environment.GetEnvironmentVariable("SystemRoot") + "/System32/drivers/etc/hosts").Skip(4).Take(1).First();
                                 labelVersi.Text = versihosts.Substring(9);
                             }
@@ -129,25 +130,6 @@ namespace bebasid
                         {
                             btnUpdateHosts.Enabled = false;
                         }
-
-                        /*
-                                                if (String.Compare(labelVersi.Text, labelVersiRemote.Text) == 0)
-                                                {
-                                                    DialogResult dialogResult = MessageBox.Show("Pembaruan definisi hosts tersedia, perbarui sekarang?", "Pembaruan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                                    if (dialogResult == DialogResult.Yes)
-                                                    {
-                                                        btnUpdateHosts.PerformClick();
-                                                    }
-                                                    else if (dialogResult == DialogResult.No)
-                                                    {
-                                                    }
-                                                    btnUpdateHosts.Enabled = true;
-                                                }
-                                                else
-                                                {
-                                                    btnUpdateHosts.Enabled = false;
-                                                }
-                        */
 
                         // Tambahan
                         labelTypeHostsValue.Text = "NSFW";

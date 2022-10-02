@@ -41,10 +41,10 @@ namespace bebasid
             WshShell shell = new WshShell();
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutLocation);
 
-            shortcut.Description = "bebasid";   // The description of the shortcut
-            shortcut.IconLocation = @"c:\windows\temp\logo_black_80e_icon.ico";  // The icon of the shortcut
-            shortcut.TargetPath = targetFileLocation;                 // The path of the file that will launch when the shortcut is run
-            shortcut.Save();                                    // Save the shortcut
+            shortcut.Description = "bebasid";
+            shortcut.IconLocation = @"c:\windows\temp\logo_black_80e_icon.ico";
+            shortcut.TargetPath = targetFileLocation;
+            shortcut.Save();
         }
 
         private void button4_Click(object sender, EventArgs e)
